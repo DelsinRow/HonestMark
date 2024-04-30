@@ -1,6 +1,9 @@
 package com.delsinrow;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -63,7 +66,8 @@ public class CrptApi {
             throw e;
         }
     }
-
+    @Getter
+    @Setter
     public static class Document {
         private String participantInn;
         private String doc_id;
@@ -78,6 +82,8 @@ public class CrptApi {
         private String reg_number;
         private Product[] products;
     }
+    @Getter
+    @Setter
     public static class Product {
         private String certificate_document;
         private String certificate_document_date;
